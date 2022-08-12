@@ -1,0 +1,27 @@
+div#header
+	if !loggedin
+		a(href = "/") Home
+		|
+		|
+		a(href = "/users") Users
+		|
+		|
+		a(href = "/register") Register
+		|
+		|
+		a(href = "/login.html") Login
+
+	if loggedin
+		a(href = "/") Home
+		|
+		|
+		a(href = "/users") Users
+		|
+		|
+		a(href = "/orderform.html") Order
+		|
+		|
+		a(href = "/profile") Profile
+		|
+		|
+		a(href = "/logout") Log Out

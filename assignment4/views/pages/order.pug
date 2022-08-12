@@ -1,0 +1,20 @@
+html
+  head
+    title Order
+
+  body
+    include ../partials/header
+
+    h3 Order: #{order._id}
+    p Restaurant Name: #{order.restaurantName}
+    p Placed By: #{order.username}
+    br
+    p Order Contents:
+      each item in order.order
+        p #{item.name} x #{item.quantity}
+    br
+
+    p Subtotal: $#{order.subtotal}
+    p Tax: $#{order.tax}
+    p Delivery Fee: $#{order.fee}
+    p Total: $#{order.total}

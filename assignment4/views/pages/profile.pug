@@ -1,0 +1,41 @@
+html
+  head
+    title Profile
+
+  body
+    include ../partials/header
+
+    h3 Profile: #{user.username}
+    if user.ownprofile
+      if user.privacy
+        p Private Mode:
+        form(action = "/users/" + user._id method = "post")
+          input(type = "radio" value = "on" name = "privacy" checked = true)
+          | On
+          br
+          input(type = "radio" value = "off" name = "privacy" checked = false)
+          | Off
+          br
+          br
+          input(type = "submit" value = "Save")
+      if !user.privacy
+        p Private Mode:
+        form(action = "/users/" + user._id method = "post")
+          input(type = "radio" value = "on" name = "privacy" checked = false)
+          | On
+          br
+          input(type = "radio" value = "off" name = "privacy" checked = true)
+          | Off
+          br
+          br
+          input(type = "submit" value = "Save")
+
+
+    if user.purchases && user.purchases.length > 0
+      h3 Order History:
+      each purchase in user.purchases
+        a(href = "/orders/" + purchase._id) #{purchase._id}
+        br
+
+
+    include ../partials/footer

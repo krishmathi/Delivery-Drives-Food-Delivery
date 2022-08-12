@@ -1,0 +1,14 @@
+html
+  head
+    title Orders
+
+
+  body
+    include ../partials/header
+    br
+
+    each order in orders
+      a(href = "/orders/" + order._id) #{order._id}
+      br
+
+    include ../partials/footer

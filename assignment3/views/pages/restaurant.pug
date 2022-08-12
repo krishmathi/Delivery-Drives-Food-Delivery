@@ -1,0 +1,65 @@
+html
+  head
+    title #{restaurant.name}
+  body
+    include ../partials/header
+    br
+    |
+    h3 ID: #{restaurant.id}
+    form
+      p Restaurant Name:
+        input(type = "text" id = "resName" value = restaurant.name)
+      p Minimum Order:
+        input(type = "number" id = "resOrder" value = restaurant.min_order)
+      p Delivery Fee:
+        input(type = "number" id = "resFee" value = restaurant.delivery_fee)
+    h3 Add Category:
+    input(type = "text" id = "category")
+    input(type = "button" value = "Add Category" onclick = "addCategory()")
+    |
+    h3 Add Menu Item:
+    p Name:
+      input(type = "text" id = "name")
+    p Description:
+      input(type = "text" id = "description")
+    p Price:
+      input(type = "number" id = "price")
+    p Category:
+      select(id = restaurant.name name = "category-select")
+    input(type = "button" value = "Add Item" onclick = "addItem()")
+    h3 Menu:
+    div#cat
+      each i, category in restaurant.menu
+        h3 #{category}
+        each j, item in restaurant.menu[category]
+          h4 #{j.name} | $ #{j.price}
+          p #{j.description}
+    div#item
+    input(type = "button" id = restaurant.id value = "Save" onclick = "sendAlert(id)")
+    script(type = "text/javascript").
+
+      function addCategory() {
+        let newCategory = document.createElement("h3");
+        let category = document.getElementById("cat");
+        newCategory.innerHTML = document.getElementById("category").value;
+        category.appendChild(newCategory);
+      }
+
+      function addItem() {
+        let newItem = document.createElement("h4");
+        let description = document.createElement("p");
+        let item = document.getElementById("item");
+        newItem.innerHTML = document.getElementById("name").value + " | $ " + document.getElementById("price").value;
+        description.innerHTML = document.getElementById("description").value;
+        item.appendChild(newItem);
+        item.appendChild(description);
+      }
+
+      function sendAlert(id) {
+        alert("Restaurant Updated.");
+        window.location.href = "http://localhost:3000/restaurants";
+
+      }
+
+    br
+    include ../partials/footer

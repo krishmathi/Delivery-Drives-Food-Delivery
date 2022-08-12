@@ -1,0 +1,23 @@
+html
+	head
+		title Delivery Drives
+	body
+		include ../partials/header
+
+		div#main
+			h1 Welcome to the Delivery Drives Stats Page!
+			h3 Order Stats
+
+			h4 Total Number of Orders (All Restaurants): #{numOfOrders}
+			each restaurant in restaurants
+				h4 #{restaurant.name}
+				p Total Number of Orders:
+				p Average Order Total:
+				p Most Popular Item:
+
+			h4 Last Order Contained:
+			each order in orderStats
+				p #{order.name}
+
+
+		include ../partials/footer

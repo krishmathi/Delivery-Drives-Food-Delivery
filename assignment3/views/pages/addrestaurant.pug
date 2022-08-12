@@ -1,0 +1,18 @@
+html
+	head
+		title Delivery Drives
+	body
+
+		include ../partials/header
+
+		h1 Welcome to the Delivery Drives Add Restaurant Page!
+		form(action = "/restaurants" method = "post")
+			p Restaurant Name:
+				input(type = "text" name = "name" required)
+			p Delivery Fee:
+				input(type = "number" name = "delivery_fee" required)
+			p Minimum Order:
+				input(type = "number" name = "min_order" required)
+			input(type = "submit" value = "Submit")
+
+		include ../partials/footer

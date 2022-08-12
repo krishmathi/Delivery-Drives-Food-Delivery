@@ -1,0 +1,40 @@
+<html class = "background">
+  <head>
+    <title>Delivery Drives | Order Restaurant Food Delivery</title>
+    <link rel = "stylesheet" href = "restaurant.css"></link>
+  </head>
+
+  <body>
+    <h1 class = "header">Delivery Drives</h1>
+
+    <h4 class = "para">WHERE WOULD YOU LIKE TO EAT?</br>
+      <select class = "dropDown" id = "restaurantNames" onchange = "getRestaurant(restaurants)">
+        <option disabled selected hidden>Select A Restaurant</option>
+      </select>
+    </h4>
+
+    <h4 class = "basicInfo" id = "basicInfo"></h4>
+
+    <div class = "row">
+      <div class = "column" style = "background-color:#4CAF50;">
+        <h2 style = "text-shadow: 0 0 10px #fff7d9;">Categories</h2>
+        <p id = "categories"></p>
+      </div>
+      <div class = "column" style = "background-color:#59c751;">
+        <h2 style = "text-shadow: 0 0 10px #fff7d9;">Menu</h2>
+        <p id = "menu"></p>
+      </div>
+      <div class= "column" style = "background-color:#61d456;">
+        <h2 style = "text-shadow: 0 0 10px #fff7d9;">Order Summary</h2>
+        <p id = "order"></p>
+        <h4 id = "subtotal"></h4>
+        <h4 id = "tax"></h4>
+        <h4 id = "deliveryFee"></h4>
+        <h4 id = "total"></h4>
+        <p id = "minimum"></p>
+        <p><input id = "mySubmit" type = "submit" value = "Order" onclick = "orderComfirmed()" disabled = true></input></p>
+      </div>
+    </div>
+    <script src = "client.js"></script>
+  </body>
+</html>

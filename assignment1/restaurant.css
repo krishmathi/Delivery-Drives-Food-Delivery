@@ -1,0 +1,47 @@
+.background {
+  background-image: linear-gradient(green, beige);
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+  background-color: #fff7d9;
+  text-align: center;
+}
+
+.header {
+  background-color: #4CAF50;
+  padding: 40px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  text-shadow: 0 0 10px #fff7d9;
+}
+
+.para {
+  font-size: 20px;
+  font-family: Helvetica, sans-serif;
+  line-height: 2;
+}
+
+.basicInfo {
+  font-size: 20px;
+  font-family: Helvetica, sans-serif;
+  line-height: 1;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.dropDown {
+  font-size: 20px;
+}
